@@ -29,14 +29,14 @@ public class PlayerController : MonoBehaviour
         if (Mathf.Abs(Input.GetAxisRaw(horizontal)) > 0.5f)
         {
             //this.transform.Translate(new Vector3(Input.GetAxisRaw(horizontal) * speed * Time.deltaTime, 0, 0));
-            playerRigidbody.velocity = new Vector2(Input.GetAxisRaw(horizontal) * speed * Time.deltaTime, playerRigidbody.velocity.y);
+            playerRigidbody.velocity = new Vector2(Input.GetAxisRaw(horizontal) * speed, playerRigidbody.velocity.y);
             lastMovement = new Vector2(Input.GetAxisRaw(horizontal), 0);
             walking = true;
         }
         if (Mathf.Abs(Input.GetAxisRaw(vertical)) > 0.5f)
         {
             //this.transform.Translate(new Vector3(0,Input.GetAxisRaw(vertical) * speed * Time.deltaTime, 0));
-            playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x, Input.GetAxisRaw(vertical) * speed * Time.deltaTime);
+            playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x, Input.GetAxisRaw(vertical) * speed);
             lastMovement = new Vector2(0, Input.GetAxisRaw(vertical));
             walking = true;
         }
